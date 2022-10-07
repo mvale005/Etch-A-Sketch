@@ -1,7 +1,11 @@
 
+* {
+    /* border: 1px black solid; */
+}
 
 body{
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -16,6 +20,5 @@ body{
     width: 600px;
     height:600px;
     flex-wrap: wrap;
-    
 
 }
