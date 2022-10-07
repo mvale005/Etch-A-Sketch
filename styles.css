@@ -1,0 +1,21 @@
+
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+.bodyContainer{
+    border: 1px solid black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height:600px;
+    flex-wrap: wrap;
+    
+
+}
