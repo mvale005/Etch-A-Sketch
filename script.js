@@ -32,18 +32,28 @@ function createGrid(gridSize) {
 
 removeGrid();
 
+     let bodyContainer  = document.querySelector(".bodyContainer");
+     let style = getComputedStyle(bodyContainer);
+     let bodyContainerWidth = style.width;//returns width+px so next line removes the px
+     const removedLast2 = bodyContainerWidth.slice(0, -2);// removing px
+    
+   
 
 for(let i = 0; i<(gridSize*gridSize);i++){
         let square = document.createElement("div");
         square.className = "square-color square-rm";
-        square.style.width = (600 / gridSize) -2 + "px";
-        square.style.height = (600/ gridSize) -2 + "px";
+        square.style.width = (removedLast2/ gridSize -2)  + "px";
+        square.style.height = (removedLast2/ gridSize -2) + "px";
         square.style.borderStyle = "solid";
         square.style.borderColor = "white";
-        square.style.borderWidth = ".5px";
+        square.style.borderWidth = "1px";
+        //square.style.borderRadius -"25px";
         let container = document.querySelector(".bodyContainer");
         container.appendChild(square);
+
+        
     }
+    
   colorSquares();
 
 }

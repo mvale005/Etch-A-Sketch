@@ -1,6 +1,6 @@
 
 * {
-    /* border: 1px black solid; */
+ border: 1px black solid;   
 }
 
 body{
@@ -20,5 +20,35 @@ body{
     width: 600px;
     height:600px;
     flex-wrap: wrap;
+    background-color: white;
 
+}
+
+#bezel {
+    background-color:rgb(190, 59, 85);
+    width: 900px;
+    height: 900px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+button {
+    background-color: white;
+    color:black;
+    width: 75px;
+    height: 30px;
+    gap:25px;
+    border-radius: 20px;
+
+}
+
+.button-container{
+    height:50px;
+    width:500px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
