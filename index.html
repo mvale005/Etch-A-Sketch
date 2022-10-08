@@ -11,12 +11,18 @@
 <body>
 
     <div id = bezel>
+        <div> Etch-a-sketch </div>
     <div class = "bodyContainer"></div>
 
     <div class = "button-container">
         <button id ="clear"> clear </button>
-        <button> color </button>
-        <button id= "sizeBtn"> set size </button>
+        <div class = colorpickcontainer>
+            <label for="colorpicker"> color </label>
+            <input type = color id =colorpicker>
+        </div>
+
+        <button id= "sizeBtn"> size </button>
+        <button id="rainbowBtn"> rainbow </button>
     </div>
     </div>
 

@@ -9,6 +9,13 @@ setSize.addEventListener('click',setGridSize);
 let clearBtn = document.getElementById('clear');
 clearBtn.addEventListener('click',clearGrid);
 
+let selectColor = document.getElementById("colorpicker");
+selectColor.addEventListener("input",pickAColor);
+
+let rainBowBtn = document.getElementById("rainbowBtn");
+rainBowBtn.addEventListener("click",changeBackToRainbow);
+
+
 
 function clearGrid(e){
   
@@ -36,9 +43,7 @@ removeGrid();
      let style = getComputedStyle(bodyContainer);
      let bodyContainerWidth = style.width;//returns width+px so next line removes the px
      const removedLast2 = bodyContainerWidth.slice(0, -2);// removing px
-    
-   
-
+     
 for(let i = 0; i<(gridSize*gridSize);i++){
         let square = document.createElement("div");
         square.className = "square-color square-rm";
@@ -47,11 +52,8 @@ for(let i = 0; i<(gridSize*gridSize);i++){
         square.style.borderStyle = "solid";
         square.style.borderColor = "white";
         square.style.borderWidth = "1px";
-        //square.style.borderRadius -"25px";
         let container = document.querySelector(".bodyContainer");
-        container.appendChild(square);
-
-        
+        container.appendChild(square);        
     }
     
   colorSquares();
@@ -72,12 +74,33 @@ for (const square of squares) {
   }
 }
 
-function removeGrid()
-{
+function removeGrid(){
  let squares = document.querySelectorAll(".square-rm");
  
 for (const square of squares) {
     square.remove();
+  }
+
 }
+
+function pickAColor(e){
+  var color = document.getElementById("colorpicker").value;
+ console.log(color);
+ let squares = document.querySelectorAll(".square-color");
+
+ for (const square of squares) {
+     square.addEventListener('mouseover', changeToColor)
+ 
+     function changeToColor(e){
+       
+         square.style.backgroundColor = color;
+        
+     }
+   }
+}
+
+function changeBackToRainbow(e){
+
+  colorSquares();
 
 }
